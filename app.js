@@ -242,6 +242,18 @@ function renderTimeline() {
       }
       collapse.appendChild(photoWrap);
     }
+    // 펼친 영역 맨 아래 접기 버튼
+    if (media.length) {
+      const cb = document.createElement("button");
+      cb.className = "collapse-btn";
+      cb.textContent = "접기 ▴";
+      cb.addEventListener("click", (e) => {
+        e.stopPropagation();
+        card.classList.remove("open");
+        card.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      collapse.appendChild(cb);
+    }
     card.appendChild(collapse);
 
     // 헤더(날짜) 클릭 → 펼침/접힘
