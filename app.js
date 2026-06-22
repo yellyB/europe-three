@@ -256,6 +256,41 @@ function renderTimeline() {
   });
 }
 
+/* ============ 오른쪽 숫자 바로가기 (스티키) ============ */
+function renderDayNav() {
+  const rail = document.createElement("nav");
+  rail.className = "day-rail";
+  rail.setAttribute("aria-label", "일자 바로가기");
+  TRIP.days.forEach((d) => {
+    const b = document.createElement("button");
+    b.textContent = d.day;
+    b.dataset.day = d.day;
+    b.title = `Day ${d.day} · ${d.title}`;
+    b.addEventListener("click", () => {
+      const t = document.getElementById(`day-${d.day}`);
+      if (t) {
+        t.querySelector(".day-card")?.classList.add("open");
+        t.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+    rail.appendChild(b);
+  });
+  document.body.appendChild(rail);
+
+  // 화면에 보이는 일자 강조
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      const n = e.target.id.replace("day-", "");
+      rail.querySelectorAll("button").forEach((b) => b.classList.toggle("active", b.dataset.day === n));
+    });
+  }, { rootMargin: "-45% 0px -45% 0px" });
+  TRIP.days.forEach((d) => {
+    const el = document.getElementById(`day-${d.day}`);
+    if (el) obs.observe(el);
+  });
+}
+
 /* ============ 갤러리 ============ */
 function renderGallery() {
   const grid = document.getElementById("gallery-grid");
@@ -306,6 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderHero();
   renderMap();
   renderTimeline();
+  renderDayNav();
   renderGallery();
   setupLightbox();
 });
