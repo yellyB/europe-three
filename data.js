@@ -165,6 +165,7 @@ const TRIP = {
       count: 0, ext: "jpg", vcount: 0, vext: "mp4",
       groups: [
         { label: "조식", media: ["d9-01-1.jpeg"] },
+        { label: "프랑크푸르트 가는 길", media: ["d9-going-1.jpeg"] },
         { label: "뢰머 광장", media: ["d9-02-1.jpeg", "d9-02-2.jpeg", "d9-02-3.jpeg"] },
         { label: "마지막 점심", media: ["d9-03-1.jpeg", "d9-03-2.jpeg"] },
         { label: "프랑크푸르트 공항", media: ["d9-04-1.jpeg", "d9-04-2.jpeg"] },
