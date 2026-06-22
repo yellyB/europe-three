@@ -24,7 +24,7 @@ const TRIP = {
       day: 1, date: "06-12", dow: "금", folder: "1일차(6.12)", countryCode: "FR",
       title: "출국 · 파리 도착",
       places: ["인천(ICN) 출발 — 아시아나 OZ501", "파리(CDG) 도착"],
-      move: "비행 14시간 15분", hotel: "베스트 웨스턴 플러스 파리 벨리지",
+      move: "비행 14시간 15분", hotel: "베스트 웨스턴 플러스 파리 벨리지 4성급 (BEST WESTERN PLUS PARIS VELIZY)",
       note: "설렘 가득한 출발. 14시간을 날아 파리에 닿다.",
       count: 0, ext: "jpg", vcount: 0, vext: "mp4",
       groups: [
@@ -38,7 +38,7 @@ const TRIP = {
       day: 2, date: "06-13", dow: "토", folder: "2일차(6.13)", countryCode: "FR",
       title: "낭만의 도시, 파리",
       places: ["에펠탑", "개선문", "샹젤리제 거리", "콩코르드 광장", "세느강 유람선"],
-      move: "파리 시내", hotel: "베스트 웨스턴 플러스 파리 벨리지",
+      move: "파리 시내", hotel: "베스트 웨스턴 플러스 파리 벨리지 4성급 (BEST WESTERN PLUS PARIS VELIZY)",
       note: "에펠탑 전망대와 세느강 유람선까지, 파리를 가득 담은 하루.",
       count: 0, ext: "jpg", vcount: 0, vext: "mp4",
       groups: [
@@ -144,7 +144,7 @@ const TRIP = {
       day: 8, date: "06-19", dow: "금", folder: "8일차(6.19)", countryCode: "FR",
       title: "알자스 — 콜마르 · 스트라스부르",
       places: ["콜마르 쁘띠 베니스", "스트라스부르 노트르담 대성당", "쁘띠 프랑스"],
-      move: "루체른→콜마르→스트라스부르", hotel: "노보텔 스트라스부르 상트르 알르",
+      move: "루체른→콜마르→스트라스부르", hotel: "노보텔 스트라스부르 상트르 알르 4성급 (Novotel Strasbourg Centre Halles)",
       note: "동화 같은 알자스, 콜마르의 운하와 스트라스부르 쁘띠 프랑스.",
       count: 0, ext: "jpg", vcount: 0, vext: "mp4",
       groups: [
@@ -200,17 +200,17 @@ const COUNTRIES = {
    lat/lon 으로 자동 배치되고 순서대로 경로선이 이어집니다.    */
 const ROUTE = [
   { name: "파리",        lat: 48.8566, lon: 2.3522,  day: 2, cc: "FR", label: true },
-  { name: "옹플뢰르",     lat: 49.4194, lon: 0.2330,  day: 3, cc: "FR" },
+  { name: "옹플뢰르",     lat: 49.4194, lon: 0.2330,  day: 3, cc: "FR", label: true },
   { name: "몽생미셸",     lat: 48.6361, lon: -1.5115, day: 4, cc: "FR", label: true },
   { name: "제네바",       lat: 46.2044, lon: 6.1432,  day: 5, cc: "CH", label: true },
-  { name: "몽트뢰",       lat: 46.4312, lon: 6.9106,  day: 5, cc: "CH" },
-  { name: "로이커바트",   lat: 46.3792, lon: 7.6280,  day: 5, cc: "CH" },
-  { name: "그뤼에르",     lat: 46.5836, lon: 7.0825,  day: 6, cc: "CH" },
+  { name: "몽트뢰",       lat: 46.4312, lon: 6.9106,  day: 5, cc: "CH", label: true },
+  { name: "로이커바트",   lat: 46.3792, lon: 7.6280,  day: 5, cc: "CH", label: true },
+  { name: "그뤼에르",     lat: 46.5836, lon: 7.0825,  day: 6, cc: "CH", label: true },
   { name: "베른",        lat: 46.9480, lon: 7.4474,  day: 6, cc: "CH", label: true },
-  { name: "인터라켄",     lat: 46.6863, lon: 7.8632,  day: 6, cc: "CH" },
-  { name: "융프라우요흐", lat: 46.5474, lon: 7.9856,  day: 7, cc: "CH" },
+  { name: "인터라켄",     lat: 46.6863, lon: 7.8632,  day: 6, cc: "CH", label: true },
+  { name: "융프라우요흐", lat: 46.5474, lon: 7.9856,  day: 7, cc: "CH", label: true },
   { name: "루체른",       lat: 47.0502, lon: 8.3093,  day: 7, cc: "CH", label: true },
-  { name: "콜마르",       lat: 48.0794, lon: 7.3585,  day: 8, cc: "FR" },
+  { name: "콜마르",       lat: 48.0794, lon: 7.3585,  day: 8, cc: "FR", label: true },
   { name: "스트라스부르", lat: 48.5734, lon: 7.7521,  day: 8, cc: "FR", label: true },
   { name: "프랑크푸르트", lat: 50.1109, lon: 8.6821,  day: 9, cc: "DE", label: true },
 ];

@@ -198,7 +198,7 @@ function renderTimeline() {
       ${d.note ? `<p class="day-note">${d.note}</p>` : ""}
       <div class="day-places">${d.places.map((p) => `<span class="place-chip">${p}</span>`).join("")}</div>
       ${media.length
-        ? `<div class="day-expand"><span class="day-expand-label">📷 사진 ${media.length}장</span><span class="day-expand-action"></span></div>`
+        ? `<div class="day-expand"><span class="day-expand-label">📷 사진 ${media.length}장</span><span class="day-expand-sep">·</span><span class="ea-open">눌러서 펼쳐보기 ▾</span><span class="ea-close">접기 ▴</span></div>`
         : `<div class="day-expand muted">사진 준비 중</div>`}`;
     card.appendChild(head);
 
