@@ -177,12 +177,6 @@ function renderTimeline() {
     day.className = "day";
     day.id = `day-${d.day}`;
 
-    const marker = document.createElement("div");
-    marker.className = "day-marker";
-    marker.style.background = country.color;
-    marker.textContent = d.day;
-    day.appendChild(marker);
-
     const card = document.createElement("div");
     card.className = "day-card";
 
@@ -190,9 +184,8 @@ function renderTimeline() {
     head.className = "day-head clickable";
     head.innerHTML = `
       <div class="day-meta">
-        <span class="day-flag">${country.flag}</span>
-        <span>${country.name}</span>
-        <span class="day-badge">Day ${d.day} · 6/${d.date.split("-")[1]} (${d.dow})</span>
+        <span class="day-country"><span class="day-flag">${country.flag}</span> ${country.name}</span>
+        <span class="day-when">${d.day}일 · 6/${d.date.split("-")[1]} (${d.dow})</span>
       </div>
       <h3 class="day-title">${d.title}</h3>
       ${d.note ? `<p class="day-note">${d.note}</p>` : ""}
@@ -265,15 +258,24 @@ function renderTimeline() {
 }
 
 /* ============ 오른쪽 숫자 바로가기 (스티키) ============ */
+// 배경색 밝기에 따라 글자색(검/흰) 선택
+function textOn(hex) {
+  const c = hex.replace("#", "");
+  const r = parseInt(c.slice(0, 2), 16), g = parseInt(c.slice(2, 4), 16), b = parseInt(c.slice(4, 6), 16);
+  return (0.299 * r + 0.587 * g + 0.114 * b) > 150 ? "#2c2a27" : "#fff";
+}
 function renderDayNav() {
   const rail = document.createElement("nav");
   rail.className = "day-rail";
   rail.setAttribute("aria-label", "일자 바로가기");
   TRIP.days.forEach((d) => {
+    const country = COUNTRIES[d.countryCode] || COUNTRIES.KR;
     const b = document.createElement("button");
     b.textContent = d.day;
     b.dataset.day = d.day;
     b.title = `Day ${d.day} · ${d.title}`;
+    b.style.setProperty("--c", country.color);
+    b.style.setProperty("--t", textOn(country.color));
     b.addEventListener("click", () => {
       const t = document.getElementById(`day-${d.day}`);
       if (t) {
