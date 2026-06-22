@@ -197,10 +197,6 @@ function renderTimeline() {
       <h3 class="day-title">${d.title}</h3>
       ${d.note ? `<p class="day-note">${d.note}</p>` : ""}
       <div class="day-places">${d.places.map((p) => `<span class="place-chip">${p}</span>`).join("")}</div>
-      <div class="day-move">
-        ${d.move ? `<span>🚌 ${d.move}</span>` : ""}
-        ${d.hotel && d.hotel !== "—" ? `<span>🏨 ${d.hotel}</span>` : ""}
-      </div>
       ${media.length
         ? `<div class="day-expand"><span class="day-expand-label">📷 사진 ${media.length}장</span><span class="day-expand-action"></span></div>`
         : `<div class="day-expand muted">사진 준비 중</div>`}`;
