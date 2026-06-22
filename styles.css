@@ -151,7 +151,7 @@ a { color: inherit; }
 .day-aside span { display: block; }
 .day-flag { font-size: 1rem; }
 .day-badge { padding: 0.1rem 0.6rem; border-radius: 999px; background: #f1ece3; font-weight: 600; }
-.day-title { font-size: 24px; margin: 0.55rem 0 0.55rem; }
+.day-title { font-size: 24px; margin: 0.55rem 0 0.2rem; }
 .day-note { color: #5f5950; margin: 0 0 0.7rem; font-size: 0.95rem; }
 .day-places { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; }
 .place-chip {
